@@ -14,8 +14,7 @@ public class StringH {
         String myName = "Eva";
         System.out.println(myName.indexOf('a')+1);
 
-        String[] names = {"Mohammand", "John","Ferdous","Abul","Ratna",
-                "Mareeha","Ruslan","Himani"};
+        String[] names = {"Mohammand", "John","Ferdous","Abul","Ratna", "Mareeha","Ruslan","Himani"};
         System.out.println(names[1].equals("John"));
 
         String[] myColleagues = new String[5];
