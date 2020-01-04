@@ -30,11 +30,11 @@ public class LessonHomeWork106 {
         }
 
         //3.Prime numbers if remainder is 0 the number is not prime
-        int num2 = 11;
+        int num2 = 12;
         int remainder;
         boolean isprime = true;
 
-        for (int i = 2; i < (num2-1); i++) {
+        for (int i = 2; i < num2; i++) {
             //calculate number
             remainder = num2 % i;
             //checking for remainder
