@@ -23,6 +23,13 @@ public class ArraysManipulator {
 
         }
 
+        public void printArray(int [] arr){
+
+            for(int i = 0; i< arr.length; i ++){
+                System.out.print(arr[i]+",");
+            }
+        }
+
         /* 3. Add all numbers in a given array (fyi: length of input array can vary)*/
         public int getSumOfArrays(int[] nums) {
             int sum = 0;
@@ -68,7 +75,7 @@ public class ArraysManipulator {
 
         /* 6. Find maximum number in given array*/
         public int getMaxNumber(int[] nums6) {
-            int maxNum = 0;
+            int maxNum = nums6[0];
             for(int i = 0; i <=nums6.length -1;i++){
                 if (nums6[i] > maxNum) {
                     maxNum = nums6[i];
