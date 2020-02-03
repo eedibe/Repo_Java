@@ -68,4 +68,22 @@ public class UserIDManager {
         return valid;
     }
 
+    public void deleteAccount(String userName) {
+      //  String[] array = new String[userNames.length];
+        int newSize = 0;
+        for (int i = 0; i < userNames.length; i++) {
+            if (userNames[i].equals(userName)) {
+                newSize++;
+            }
+        }
+        String[] tempArray = new String[newSize];
+        int index = 0;
+        for (int i = 0; i < userNames.length; i++) {
+            if (userNames[index].equals(userName)) {
+                tempArray[index] = userNames[i];
+                index++;
+            }
+        }
+
+    }
 }

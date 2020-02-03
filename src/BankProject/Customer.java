@@ -20,7 +20,6 @@ public class Customer {
 
     }
 
-
     public void addAccount(double initialBalance) {
         account = new Account(initialBalance);
         account.setAccountId(Account.getNextId());
@@ -40,7 +39,11 @@ public class Customer {
         return account;
     }
 
-    public void deleteAccount(String accountId) {
-        account = null;
-    }
+ public void deleteUserName(String userName){
+        manager.deleteAccount(userName);
+     System.out.println("Username "+userName+ " has been deleted");
+ }
+
+
+
 }
