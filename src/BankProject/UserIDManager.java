@@ -2,36 +2,60 @@ package BankProject;
 
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.*;
 
 public class UserIDManager {
 
-    ArrayList<String> usersNameList = new ArrayList();
+    private static String[] userNames = null;
 
-    public boolean addUserName(String userName) {
 
-        userName = userName.toLowerCase();
+    public static String[] addToArray(String name) {
+        int n;
+        if (userNames == null) {
+            String[] newArray = new String[1];
+            newArray[0] = name;
+            return newArray;
+        } else
+            n = userNames.length;
+        String[] newArray = new String[n + 1];
+        for (int i = 0; i < n; i++) {
+            newArray[i] = userNames[i];
+            newArray[n] = name;
+        }
+        return newArray;
+    }
+
+
+    public static boolean addUserName(String userName) {
+
         if (userName.length() < 3) {
             System.out.println("Invalid user name, username must be at leat 3 character long.");
             return false;
-        } else if (usersNameList.contains(userName)) {
-            System.out.println("This username already exist, please choose different username");
-            return false;
-        } else
-            usersNameList.add(userName);
-      //  System.out.println("Username '" + userName + "' has been created.");
+        }
+        if (userNames != null) {
+            for (String element : userNames) {
+                if (element.equals(userName)) {
+                    System.out.println("This username already exist, please choose different username");
+                    return false;
+                }
+            }
+        }
+        userNames = addToArray(userName);
+
         return true;
     }
 
-    public boolean createPassword( String userName, String password) {
 
+    public boolean createPassword(String userName, String password) {
 
         boolean valid = true;
         if (password.length() < 8) {
-            System.out.println("password length minimum 8 character ");
+            System.out.println("A password must have at least eight characters..");
             valid = false;
         }
-        if (!(password.matches("[a-zA-Z]+"))&& password.matches("[0-9]+")){
-            System.out.println(" you must have an alpha numaric value:");
+        if (!(password.matches("[a-zA-Z]+")) && password.matches("[0-9]+")) {
+            System.out.println("A password consists of only letters and digits.");
             valid = false;
         }
         if (password.equals(userName)) {
@@ -39,12 +63,9 @@ public class UserIDManager {
             valid = false;
         }
         if (valid) {
-          //  System.out.println("password is valid");
+
         }
         return valid;
     }
 
-    public void removeUser(String userName) {
-        usersNameList.remove(userName);
-    }
 }
