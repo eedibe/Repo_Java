@@ -40,8 +40,11 @@ public class Customer {
     }
 
  public void deleteUserName(String userName){
-        manager.deleteAccount(userName);
-     System.out.println("Username "+userName+ " has been deleted");
+        boolean deleted = manager.deleteAccount(userName);
+     if(deleted)
+         System.out.println("Username "+userName+ " has been deleted");
+     else
+         System.out.println("Username " + userName+ " doesn't  exists");
  }
 
 
