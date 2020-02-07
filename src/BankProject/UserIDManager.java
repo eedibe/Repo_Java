@@ -55,7 +55,7 @@ public class UserIDManager {
             valid = false;
         }
         if (!(password.matches("[a-zA-Z]+")) && password.matches("[0-9]+")) {
-            System.out.println("A password must contains at least one character.");
+            System.out.println("A password must contain at least one character.");
             valid = false;
         }
         if (password.equals(userName)) {
